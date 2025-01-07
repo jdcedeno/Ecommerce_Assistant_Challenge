@@ -1,0 +1,5 @@
+fastapi==0.115.6
+langchain_chroma==0.1.4
+langchain_huggingface==0.1.2
+pandas==2.2.3
+transformers==4.47.1
