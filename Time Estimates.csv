@@ -2,6 +2,8 @@ Story,Task,Estimate min (hr),Estimate max (hr),Actual,Comment
 01 – research,learn enough to be able to plan a sprint. The outcome of this task should be a completed time estimate file.,none,none,5 days 12.26 – 12.30,Learning about prompt engineering and building LLM systems with langchain. Understanding vector stores and semanting space representations of text for running similarity search. Tinkering with python and langchain. Trying to build simple systems and understand the framework and workflows.
 02 – Build Retriever,tinker with libraries and python code to build the simplest system that retrieves the relevant documents,,,4 days 01.02 – 01.05,
 03 – Build LLM,Build the simplest system that answers questions based on retrieved relevant documents,,,1 day 01.06,
-04 – Build Test site,Build a node-express server that can run a python program. Configure Docker,4h,8h,10min,Build a simple system that implements the same workflow the app will use. The server will have an endpoint that receives the user query for the LLM. The LLM will be a python script that takes one string (user query) as the only argument.
-04 – Build Test site,Build the simplest client and server apps so users can query the llm from a client application.,,,,
+04 – Build Test site,Build a node-express server that can run a python program. Configure Docker,4h,8h,1 h,"Build a simple system that implements the same workflow the app will use. The server will have an endpoint that receives the user query for the LLM. The LLM will be a python script that takes one string (user query) as the only argument.
+10 min – update docker desktop
+50 min – Build simple server with docker configuration."
+04 – Build Test site,Build the simplest client and server apps so users can query the llm from a client application.,8h,12h,,1h – create python script for retrieving documents from query using similarity search. Return the 3 most relevant documents
 05 – Deploy,Configure Nginx on the host machine and set up docker containers and docker-compose file. Set up production environment. Test,,,,
