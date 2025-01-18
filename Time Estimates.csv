@@ -5,5 +5,6 @@ Story,Task,Estimate min (hr),Estimate max (hr),Actual,Comment
 04 – Build Test site,Build a node-express server that can run a python program. Configure Docker,4h,8h,1 h,"Build a simple system that implements the same workflow the app will use. The server will have an endpoint that receives the user query for the LLM. The LLM will be a python script that takes one string (user query) as the only argument.
 10 min – update docker desktop
 50 min – Build simple server with docker configuration."
-04 – Build Test site,Build the simplest client and server apps so users can query the llm from a client application.,8h,12h,,1h – create python script for retrieving documents from query using similarity search. Return the 3 most relevant documents
+04 – Build Test site,Build the simplest client and server apps so users can query the llm from a client application.,8h,12h,,"1h – create python script for retrieving documents from query using similarity search. Return the 3 most relevant documents
+4h – Build python script for building and querying a chromadb collection. At this point the script has been modified to take a –reset flag that defaults to false. This assumes the collection already exists. Needs more flexibility when choosing which collection to query. (In progress)"
 05 – Deploy,Configure Nginx on the host machine and set up docker containers and docker-compose file. Set up production environment. Test,,,,
