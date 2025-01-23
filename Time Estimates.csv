@@ -6,5 +6,14 @@ Story,Task,Estimate min (hr),Estimate max (hr),Actual,Comment
 10 min – update docker desktop
 50 min – Build simple server with docker configuration."
 04 – Build Test site,Build the simplest client and server apps so users can query the llm from a client application.,8h,12h,,"1h – create python script for retrieving documents from query using similarity search. Return the 3 most relevant documents
-4h – Build python script for building and querying a chromadb collection. At this point the script has been modified to take a –reset flag that defaults to false. This assumes the collection already exists. Needs more flexibility when choosing which collection to query. (In progress)"
+4h – Build python script for building and querying a chromadb collection. At this point the script has been modified to take a –reset flag that defaults to false. This assumes the collection already exists. Needs more flexibility when choosing which collection to query. (In progress).
+1h20m – Test chroma similarity search results when embedding documents with or without metadatas and title. Found out that similarity is only performed on the actual stuff that was embedded. Conclusion: should embed the full row from product data.
+20m – Start building tool picker logic. Should be a LLM that receives a query and decides which tool to use depending on the user query.
+Try to finish building tool picker:
+     1h15m – Building workflow for script to query chroma. Must be containerized so libraries will be pre-installed to prevent modulenotfound error. Run the subprocess.check_output() command to execute the container to query chromadb."
 05 – Deploy,Configure Nginx on the host machine and set up docker containers and docker-compose file. Set up production environment. Test,,,,
+01 – research,build a small system that can use few-shot examples to decide which tool to use based on a user query,4h,8h,,2h30m – Research how LLMs can use tools
+06 – Build Tool-Picking LLM,Build a small LLM that can decide which tool to use based on user prompt. Tools should be implemented in a different task. The goal of this task is only to build an llm that can correcty decide which tool to use given their descriptions. No execution yet,8h,12h,6h,"6h – First step: build a basic LLM that can decide which tool to use given a user query. The LLM should output the tool to be used to get the required information based on the user prompt.
+     - May need to have the LLM take the user query and structure the data (in the case of the mock API tool) for use as input"
+07 – Build tool execution workflow,"Add logic that parses the result from the LLM, runs whichever tools are required and returns the results in some convenient format",1h,2h,45m,
+08 – queryRobertaQA.py,"create a script that takes a user query, uses the toolPicker.py to get data for context, and uses the serverless inference API to query the Roberta base squad model for extractive QA",8h,12h,,6h30m – In progress…
