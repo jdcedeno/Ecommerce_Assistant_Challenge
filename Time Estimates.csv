@@ -2,7 +2,7 @@ Story,Task,Estimate min (hr),Estimate max (hr),Actual,Comment
 01 – research,learn enough to be able to plan a sprint. The outcome of this task should be a completed time estimate file.,none,none,5 days 12.26 – 12.30,Learning about prompt engineering and building LLM systems with langchain. Understanding vector stores and semanting space representations of text for running similarity search. Tinkering with python and langchain. Trying to build simple systems and understand the framework and workflows.
 02 – Build Retriever,tinker with libraries and python code to build the simplest system that retrieves the relevant documents,,,4 days 01.02 – 01.05,
 03 – Build LLM,Build the simplest system that answers questions based on retrieved relevant documents,,,1 day 01.06,
-04 – Build Test site,Build a node-express server that can run a python program. Configure Docker,4h,8h,1 h,"Build a simple system that implements the same workflow the app will use. The server will have an endpoint that receives the user query for the LLM. The LLM will be a python script that takes one string (user query) as the only argument.
+04 – Build Test site,Build a node-express server that can run a python program. Configure Docker,4h,8h,1h,"Build a simple system that implements the same workflow the app will use. The server will have an endpoint that receives the user query for the LLM. The LLM will be a python script that takes one string (user query) as the only argument.
 10 min – update docker desktop
 50 min – Build simple server with docker configuration."
 04 – Build Test site,Build the simplest client and server apps so users can query the llm from a client application.,8h,12h,8h,"1h – create python script for retrieving documents from query using similarity search. Return the 3 most relevant documents
@@ -17,3 +17,15 @@ Try to finish building tool picker:
      - May need to have the LLM take the user query and structure the data (in the case of the mock API tool) for use as input"
 07 – Build tool execution workflow,"Add logic that parses the result from the LLM, runs whichever tools are required and returns the results in some convenient format",1h,2h,45m,
 08 – queryRobertaQA.py,"create a script that takes a user query, uses the toolPicker.py to get data for context, and uses the serverless inference API to query the Roberta base squad model for extractive QA",8h,12h,8h30m,Next steps: Integrate mockAPI and chromadb into tool usage. Tell took picker model how to use the mockAPI to get user information
+01 – research,Learn more about agents and tool calling concepts,1h,3h,2h50m,"https://huggingface.co/docs/smolagents/index
+https://huggingface.co/docs/smolagents/conceptual_guides/intro_agents
+https://huggingface.co/papers/2411.01747
+https://huggingface.co/docs/smolagents/conceptual_guides/react
+https://huggingface.co/blog/open-source-llms-as-agents
+https://colab.research.google.com/drive/1j_vsc28FwZEDocDxVxWJ6Fvxd18FK8Gl?usp=sharing"
+09 – Clean up PC for running DeepSeekR1 locally (there is no serverless inference api),"1. Make space in PC, probably purchase a new one that can run inference for LLMs. ROG Zephyrus G16 (2025) GU605 sounds good.
+2. Enable LLMs to run using graphics card",1h,2h,7h,"- Delete old user profile, around 30GB
+- Create Powershell program to analyze total size of each item in a given path or drive. Include nested items when calculating total size of container types like libraries
+- Delete large unused files and folders
+- Delete unused programs"
+03 – Build LLM,Build and run queries on the DeepSeekR1 model. Make sure it runs inference on the GPU.,1h,5h,,- Install dependencies to run model
