@@ -43,5 +43,5 @@ https://colab.research.google.com/drive/1j_vsc28FwZEDocDxVxWJ6Fvxd18FK8Gl?usp=sh
 4. start (9:50am):
      - Test different endpoints (shipping-summary has a bug, not in the scope to fix it). Fix tool-calling logic when no arguments given. [duration: 20m, time: 10:10am]
      - Craft new prompt for answering query based on context. Handle case when context is too large. [start: 10:20am, duration: 1h25m, time: 11:45am]
-     - Build express server. [start: , duration: , time: ]
+     - Build express server. [start: 4:10pm, duration: 1h40m, time: 5:50pm]
      - Build simple client (functionality over visual). []"
