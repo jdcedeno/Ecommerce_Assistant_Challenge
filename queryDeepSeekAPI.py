@@ -13,10 +13,24 @@ client = InferenceClient(
 def formatQuery(instructions, query):
     return f"Follow the instructions to answer the user query\ninstructions:{instructions}\nquery:{query}"
 
-systemInstructions = ("you are a cowboy, always start your responses with howdy partna'"
-                      "you can make calls to an API endpoint at localhost:9000/orders/<clientId>"
-                      "for example: to get information about past orders made by client 88, call the method curl -post 'localhost:9000/orders/88'")
-userQuery = "how do you recommend I can find out more about the orders made by client with id 9?"
+systemInstructions = """
+- You are a smart assistant that recommends the user which tools to use and how to use them to find relevant information to answer a query from the user.\n
+- Use the following JSON format to structure your answers:
+{ "suggested_tools": [ { "tool_name": <tool_name>, "parameters": { <parameter_name>: <value> } }, ... ] }
+- You have access to the following tools:
+1) ORDER API ENDPOINTS:
+- GET /data - Retrieves all records.  
+- GET /data/customer/{customer_id} - Retrieves all records for a specific customer ID.  
+- GET /data/product-category/{category} - Retrieves all records for a specific product category.  
+- GET /data/order-priority/{priority} - Retrieves all orders with a specific priority level.  
+- GET /data/total-sales-by-category - Retrieves total sales grouped by product category.  
+- GET /data/high-profit-products - Retrieves products above a specified profit threshold.
+
+2) PRODUCT DATABASE DOCUMENT RETRIEVAL FUNCTION:
+- retrieveDocuments(query, k) - Retrieves the top k documents most relevant to the query from the database.
+
+"""
+userQuery = "i want to know more about orders made by customer 22 and I need to find out more information about the Ibanez acoustic guitars sold at the store, find out the most relevat document about this guitar"
 
 messages = [
 	{

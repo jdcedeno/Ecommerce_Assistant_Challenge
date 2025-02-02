@@ -28,4 +28,20 @@ https://colab.research.google.com/drive/1j_vsc28FwZEDocDxVxWJ6Fvxd18FK8Gl?usp=sh
 - Create Powershell program to analyze total size of each item in a given path or drive. Include nested items when calculating total size of container types like libraries
 - Delete large unused files and folders
 - Delete unused programs"
-03 – Build LLM,Build and run queries on the DeepSeekR1 model. Make sure it runs inference on the GPU.,1h,5h,,- Install dependencies to run model
+03 – Build LLM,Build and run queries on the DeepSeekR1 model. Make sure it runs inference on the GPU.,1h,5h,1h20m,"- Install dependencies to run model
+- Verify CUDA version and install compatible PyTorch version"
+03 – Build LLM,Build and run queries on the DeepSeekR1 model. Make sure to use serverless inference API.,2h,4h,1h40m,"- update huggingface_hub, was causing issues when running inference"
+03 – Build LLM Prompt,"Create a prompt tailored for DeepSeekR1, the user message should contain all instructions. System role messages shouldn’t be used (from the docs)",4h,8h,2h30m,"- test out different prompt ideas (1h)
+- add tool calling logic after getting tool suggestions (1h30m)
+- setup server using uvicorn. (10m)"
+10 – Build tool-calling logic,"Parse the tool-suggestion response, call the tools and craft a new prompt for answering the user’s query given the new context obtained from calling the suggested tools",4h,8h,,"1. start (10am): analyze current codebase and start organizing into services, start managing individual environments. [duration: 30m, time: 10:35am]
+2. start (6am): 
+     - Test FastAPI projects (mockAPI and query_llm_service). [duration: 15m, time: 6:15am]
+     - Add missing tools in prompt, fix tool mapping in execution logic. [duration: 1h, time: 7:15am]
+3. start (8:10am):
+     - Debug tool execution logic. Make sure response is parsed correctly and tools are executed. [duration: 1h10m, time: 9:20am]
+4. start (9:50am):
+     - Test different endpoints (shipping-summary has a bug, not in the scope to fix it). Fix tool-calling logic when no arguments given. [duration: 20m, time: 10:10am]
+     - Craft new prompt for answering query based on context. Handle case when context is too large. [start: 10:20am, duration: 1h25m, time: 11:45am]
+     - Build express server. [start: , duration: , time: ]
+     - Build simple client (functionality over visual). []"
