@@ -129,7 +129,7 @@ def crop_context(text, max_tokens=512):
 # Example usage in your summarization function:
 def summarize_context(context_text, max_tokens=200):
     # Crop the context before sending to the LLM to avoid oversized input.
-    cropped_context = crop_context(context_text, max_tokens=512)  # Adjust max_tokens as needed
+    cropped_context = crop_context(context_text, max_tokens=8000)  # Adjust max_tokens as needed
 
     summarization_prompt = (
         f"Please summarize the following context in a concise manner, "
@@ -155,8 +155,8 @@ def generate_final_answer(user_query, tool_results):
     context = json.dumps(tool_results, indent=2)
     
     # Define a threshold for the maximum allowed context length.
-    # You may need to adjust this threshold based on your model's context window limits.
-    CONTEXT_LENGTH_THRESHOLD = 500  # characters; adjust as needed
+    # Test out different values
+    CONTEXT_LENGTH_THRESHOLD = 500
     
     if len(context) > CONTEXT_LENGTH_THRESHOLD:
         print("Context too large, summarizing...")
@@ -165,6 +165,7 @@ def generate_final_answer(user_query, tool_results):
     # Build the final prompt.
     final_prompt = (
         f"Use the information in the context to answer the user query.\n\n"
+        "*Always structure your answer by saying which tools were used and what information you got from them summarized in a concise way to answer the query*"
         f"Query: {user_query}\n\n"
         f"Context: {context}\n\n"
         "Answer:"
