@@ -34,7 +34,7 @@ https://colab.research.google.com/drive/1j_vsc28FwZEDocDxVxWJ6Fvxd18FK8Gl?usp=sh
 03 – Build LLM Prompt,"Create a prompt tailored for DeepSeekR1, the user message should contain all instructions. System role messages shouldn’t be used (from the docs)",4h,8h,2h30m,"- test out different prompt ideas (1h)
 - add tool calling logic after getting tool suggestions (1h30m)
 - setup server using uvicorn. (10m)"
-10 – Build tool-calling logic,"Parse the tool-suggestion response, call the tools and craft a new prompt for answering the user’s query given the new context obtained from calling the suggested tools",4h,8h,,"1. start (10am): analyze current codebase and start organizing into services, start managing individual environments. [duration: 30m, time: 10:35am]
+10 – Build tool-calling logic,"Parse the tool-suggestion response, call the tools and craft a new prompt for answering the user’s query given the new context obtained from calling the suggested tools",4h,8h,6h20m,"1. start (10am): analyze current codebase and start organizing into services, start managing individual environments. [duration: 30m, time: 10:35am]
 2. start (6am): 
      - Test FastAPI projects (mockAPI and query_llm_service). [duration: 15m, time: 6:15am]
      - Add missing tools in prompt, fix tool mapping in execution logic. [duration: 1h, time: 7:15am]
@@ -43,5 +43,12 @@ https://colab.research.google.com/drive/1j_vsc28FwZEDocDxVxWJ6Fvxd18FK8Gl?usp=sh
 4. start (9:50am):
      - Test different endpoints (shipping-summary has a bug, not in the scope to fix it). Fix tool-calling logic when no arguments given. [duration: 20m, time: 10:10am]
      - Craft new prompt for answering query based on context. Handle case when context is too large. [start: 10:20am, duration: 1h25m, time: 11:45am]
-     - Build express server. [start: 4:10pm, duration: 1h40m, time: 5:50pm]
-     - Build simple client (functionality over visual). []"
+     - Build express server. [start: 4:10pm, duration: 1h40m, time: 5:50pm]"
+11 – Build client,"Build a simple client with:
+1. an input box for the user to type a query.
+2. a button to submit the user query:
+- the button should submit a post request with the user query to the server’s /query endpoint.
+- the response contains llm_response, tool_results, and answer. These should be showed in a readable format. Show initial thoughts for tool suggestion (llm_response), suggested tools (tool_results), and the final answer to the query (answer) in a readable way.
+- apply the minimum styles so it looks presentable.",4h,8h,,"1. start (6am):
+     - analyze current codebase, re-run tests (from client to server to services consuming the mockAPI). [duration: 1h, time: 7am]
+     - build vite + react client. Remove unused files. Configure eslint and prettier. [start: 10am, duration: 3h, time: 1:00pm]"
