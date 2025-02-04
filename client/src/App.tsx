@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 
+
 interface ToolResult {
   status_code: number
   data: Record<string, unknown>[]
@@ -34,7 +35,7 @@ const App: React.FC = () => {
 
     try {
       // Send POST request to the server /query endpoint
-      const response = await fetch("http://localhost:3001/query", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/query`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

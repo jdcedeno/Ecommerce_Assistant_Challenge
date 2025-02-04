@@ -49,6 +49,10 @@ https://colab.research.google.com/drive/1j_vsc28FwZEDocDxVxWJ6Fvxd18FK8Gl?usp=sh
 2. a button to submit the user query:
 - the button should submit a post request with the user query to the server’s /query endpoint.
 - the response contains llm_response, tool_results, and answer. These should be showed in a readable format. Show initial thoughts for tool suggestion (llm_response), suggested tools (tool_results), and the final answer to the query (answer) in a readable way.
-- apply the minimum styles so it looks presentable.",4h,8h,,"1. start (6am):
+- apply the minimum styles so it looks presentable.",4h,8h,4h,"1. start (6am):
      - analyze current codebase, re-run tests (from client to server to services consuming the mockAPI). [duration: 1h, time: 7am]
      - build vite + react client. Remove unused files. Configure eslint and prettier. [start: 10am, duration: 3h, time: 1:00pm]"
+12 – Containerize for deployment,"- Install the production-ready app in the server
+- Test ",,,,"1. start (7:10am):
+     - create Dockerfiles and docker-compose.yml. [duration: 3h, time: 10:10am]
+     - Install app in server machine (for self-hosting the app services) [start: 10:10, duration: , time:]"

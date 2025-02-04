@@ -1,7 +1,61 @@
-# services:
-#   app:
-#     build: .
-#     ports:
-#       - "3000:3000"
-#     environment:
-#       - NODE_ENV=production
+services:
+  client:
+    build:
+      context: ./client
+      args:
+        VITE_API_URL: ${VITE_API_URL}
+    container_name: client
+    ports:
+      - "80:80"
+    env_file:
+      - .env
+    networks:
+      - app-network
+
+  server:
+    build:
+      context: ./server
+    container_name: server
+    ports:
+      - "${SERVER_PORT}:${SERVER_PORT}"
+    env_file:
+      - .env
+    networks:
+      - app-network
+    depends_on:
+      - query_llm_service
+      - mock_api
+
+  query_llm_service:
+    build:
+      context: ./query_llm_service
+      args:
+        LLM_SERVICE_PORT: ${LLM_SERVICE_PORT}
+    container_name: query_llm_service
+    ports:
+      - "${LLM_SERVICE_PORT}:${LLM_SERVICE_PORT}"
+    env_file:
+      - .env
+    environment:
+      - LLM_SERVICE_PORT=${LLM_SERVICE_PORT}
+    networks:
+      - app-network
+
+  mock_api:
+    build:
+      context: ./mock_api
+      args:
+        MOCK_API_PORT: ${MOCK_API_PORT}
+    container_name: mock_api_service
+    ports:
+      - "${MOCK_API_PORT}:${MOCK_API_PORT}"
+    env_file:
+      - .env
+    environment:
+      - MOCK_API_PORT=${MOCK_API_PORT}
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
