@@ -19,7 +19,7 @@ client = InferenceClient(
 # System instructions for tool suggestions
 system_instructions = """
 - You are a smart assistant that suggests the best tools to find relevant information to answer a query from the user.
-- Use the following JSON format to structure your answers:
+* IMPORTANT: Always use the following JSON format to structure your answers:*
 { "suggested_tools": [ { "tool_name": <tool_name>, "parameters": { <parameter_name>: <value> } }, ... ] }
 - You have access to the following tools:
 
@@ -106,7 +106,7 @@ tool_mapping = {
     "retrieveDocuments": lambda params: retrieve_documents(params["query"], params["k"]),
 }
 
-def crop_context(text, max_tokens=512):
+def crop_context(text, max_tokens=500):
     """
     Crops the input text so that its tokenized representation does not exceed max_tokens.
     """
@@ -156,7 +156,7 @@ def generate_final_answer(user_query, tool_results):
     
     # Define a threshold for the maximum allowed context length.
     # Test out different values
-    CONTEXT_LENGTH_THRESHOLD = 500
+    CONTEXT_LENGTH_THRESHOLD = 1000
     
     if len(context) > CONTEXT_LENGTH_THRESHOLD:
         print("Context too large, summarizing...")

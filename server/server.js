@@ -4,7 +4,7 @@ const cors = require("cors")
 
 
 const app = express()
-const port = process.env.PORT || 3001
+const port = process.env.SERVER_PORT || 3001
 
 // Middleware
 app.use(express.json())
@@ -21,7 +21,7 @@ app.post("/query", async (req, res) => {
     }
 
     // Call the query_llm_service at port 8000 using Axios
-    const response = await axios.post("http://localhost:8000/query", {query: query})
+    const response = await axios.post(`http://query_llm_service:${process.env.LLM_SERVICE_PORT}/query`, {query: query})
 
     // Return the response from the LLM service back to the client
     res.json(response.data)
