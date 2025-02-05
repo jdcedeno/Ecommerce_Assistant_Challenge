@@ -264,6 +264,9 @@ def execute_tools(suggested_tools):
                 results[tool_name] = {"error": str(e)}
         else:
             results[tool_name] = {"error": f"Unknown tool: {tool_name}"}
+    
+    print("results from tools")
+    print(results)
 
     return results
 
