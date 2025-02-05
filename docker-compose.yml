@@ -3,7 +3,7 @@ services:
     build:
       context: ./client
       args:
-        VITE_API_URL: ${VITE_API_URL:-http://localhost:${SERVER_PORT}}
+        VITE_API_URL: ${VITE_API_URL}
     container_name: client
     ports:
       - "${CLIENT_PORT}:80"

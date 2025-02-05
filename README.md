@@ -1,6 +1,7 @@
 # Instructions
 1. Create a .env file with the following variables:
 ```
+VITE_API_URL="http://localhost:<same-as-server-port>"
 CLIENT_PORT=<for-example-3000>
 SERVER_PORT=<for-example-3001>
 LLM_SERVICE_URL="http://query_llm_service:8000"
