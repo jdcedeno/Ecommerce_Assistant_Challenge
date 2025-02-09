@@ -53,6 +53,11 @@ https://colab.research.google.com/drive/1j_vsc28FwZEDocDxVxWJ6Fvxd18FK8Gl?usp=sh
      - analyze current codebase, re-run tests (from client to server to services consuming the mockAPI). [duration: 1h, time: 7am]
      - build vite + react client. Remove unused files. Configure eslint and prettier. [start: 10am, duration: 3h, time: 1:00pm]"
 12 – Containerize for deployment,"- Install the production-ready app in the server
-- Test ",,,,"1. start (7:10am):
-     - create Dockerfiles and docker-compose.yml. [duration: 3h, time: 10:10am]
-     - Install app in server machine (for self-hosting the app services) [start: 10:10, duration: , time:]"
+- Test ",4h,8h,13h,"- Create Dockerfiles and docker-compose.yml
+- Re-install OS on server machine with bootable USB, reformat drives
+- Pull reop in server machine (for self-hosting the app services)
+- Configure Dockerfiles and docker-compose
+- Configure Nginx to serve main and api sub-domains’ traffic to client and server containers
+- Get security certificates
+- Test app
+"
